@@ -6,6 +6,8 @@ console.log(router, route)
 </script>
 <template>
   <div>我是App</div>
+  <router-view> </router-view>
+
   <button @click="$router.push('/hh')">tiaotiao</button>
   <div>
     <el-button type="primary">Primary</el-button>

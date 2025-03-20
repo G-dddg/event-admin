@@ -35,7 +35,7 @@ export default [
         {
           singleQuote: true,
           semi: false,
-          printWidth: 100,
+          printWidth: 80,
           trailingComma: 'none',
           endOfLine: 'auto'
         }
