@@ -1,21 +1,9 @@
-<script setup>
-import { useRouter, useRoute } from 'vue-router'
-const router = useRouter()
-const route = useRoute()
-console.log(router, route)
-</script>
+<script setup></script>
 <template>
-  <div>我是App</div>
-  <router-view> </router-view>
-
-  <button @click="$router.push('/hh')">tiaotiao</button>
   <div>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-    ...
+    <el-config-provider :locale="zh">
+      <router-view />
+    </el-config-provider>
   </div>
 </template>
 

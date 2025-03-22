@@ -13,7 +13,7 @@ const instance = axios.create({
 // 请求拦截器
 instance.interceptors.request.use(
   (config) => {
-    const token = useUserStore.token
+    const token = useUserStore().token
     if (token) {
       config.headers.Authorization = token
     }

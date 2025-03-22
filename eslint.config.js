@@ -35,7 +35,7 @@ export default [
         {
           singleQuote: true,
           semi: false,
-          printWidth: 80,
+          printWidth: 100,
           trailingComma: 'none',
           endOfLine: 'auto'
         }
@@ -49,7 +49,10 @@ export default [
   {
     languageOptions: {
       globals: {
-        ...globals.browser
+        ...globals.browser,
+        ElMessage: 'readonly',
+        ElMessageBox: 'readonly',
+        ElLoading: 'readonly'
       }
     }
   },
