@@ -7,6 +7,8 @@ import '@vueup/vue-quill/dist/vue-quill.snow.css'
 import { artPublishService, artGetDetailService } from '@/api/article'
 import { baseURL } from '@/utils/request'
 import axios from 'axios'
+import { artEditService } from '@/api/article'
+
 const visibleDrawer = ref(false)
 const defalutFormModel = {
   title: '',
@@ -62,7 +64,10 @@ const onPublish = async (state) => {
   }
 
   if (formModel.value.id) {
-    console.log('编辑操作')
+    await artEditService(fd)
+    ElMessage.success('编辑成功')
+    visibleDrawer.value = false
+    emit('success', 'edit')
   } else {
     // 添加请求
     await artPublishService(fd)
